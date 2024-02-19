@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://localhost:8080/conect');
+const socket = new WebSocket('ws://localhost:8080/connect');
 const Client = Stomp.over(socket);
 
 
@@ -48,7 +48,7 @@ function connect(){
         console.log('Conectado: ' + frame);
 
 
-        Client.subscribe('/canal', function (message) {
+        Client.subscribe('/chat', function (message) {
             const chatMessage = JSON.parse(message.body);
             displayMessage(chatMessage.msg, chatMessage.user);
         });

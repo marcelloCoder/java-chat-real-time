@@ -8,7 +8,7 @@ import com.chat.realtime.config.Message;
 
 @Controller
 public class App {
-	@MessageMapping("/chatmessage")
+	@MessageMapping("/chatMessage")
 	@SendTo("/chat")
 	
 	public Message sendMessage(Message message) {
